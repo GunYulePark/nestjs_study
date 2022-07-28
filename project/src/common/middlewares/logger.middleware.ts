@@ -6,6 +6,7 @@ export class LoggerMiddleware implements NestMiddleware {
   use(req: Request, res: Response, next: NextFunction) {
     // response에 대한 결과값도 logging할 때
     res.on('finish', () => {
+      // res가 완료됐을 때,
       this.logger.log(
         `${req.ip} ${req.method} ${res.statusCode}`,
         req.originalUrl,
