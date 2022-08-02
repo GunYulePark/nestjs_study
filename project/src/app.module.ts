@@ -1,12 +1,12 @@
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { CatsModule } from '../cats/cats.module';
-import { LoggerMiddleware } from './middlewares/logger.middleware';
-import { UsersModule } from '../users/users.module';
+import { LoggerMiddleware } from './common/middlewares/logger.middleware';
+import { UsersModule } from './users/users.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import * as mongoose from 'mongoose';
 import { ConfigModule } from '@nestjs/config';
+import { CatsModule } from './cats/cats.module';
 
 @Module({
   imports: [

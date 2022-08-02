@@ -6,6 +6,7 @@ import {
   UseFilters,
   UseInterceptors,
 } from '@nestjs/common';
+import { ApiOperation } from '@nestjs/swagger';
 import { HttpExceptionFilter } from 'src/common/exceptions/http-exception.filter';
 import { SuccessInterceptor } from 'src/common/interceptors/success.interceptors';
 import { CatsService } from './cats.service';
@@ -22,6 +23,7 @@ export class CatsController {
     return 'current cat';
   }
 
+  @ApiOperation({ summary: '회원가입' })
   @Post()
   async signUp(@Body() body: CatRequestDto) {
     return await this.catsService.signUp(body);
