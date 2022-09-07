@@ -13,7 +13,7 @@ export class AppController {
     @Req() req: Request,
     @Body() Body,
     //Body는 param과 달리 Dto를 선언해서
-    // validation을 평가할 수 있다.(필수 request 요청, 악의적 request 요청 거를 수 있다.)
+    // validation을 평가할 수 있다.(필수 request 요청, 악의적인 request 요청 거를 수 있다.)
     @Param() param: { id: string; name: string },
   ): string {
     // console.log(req);
